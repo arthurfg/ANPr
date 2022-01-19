@@ -19,5 +19,7 @@ Imports:
     httr,
     stringr,
     glue,
-    purr,
-    utils
+    utils,
+    purrr,
+    rvest,
+    xml2
