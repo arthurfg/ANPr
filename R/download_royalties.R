@@ -26,9 +26,13 @@ download_royalties <- function(ano_inicial, ano_final){
 
   purrr::walk2(links, dest, utils::download.file, mode = "wb")
 
+
   #teste
 
-
+  municipios_2019 %>%
+    dplyr::filter(municipio == "macae") %>%
+    dplyr::mutate(competencia = openxlsx::convertToDate(competencia),
+                  caixa =  openxlsx::convertToDate(caixa))
 
 
 
