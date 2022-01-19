@@ -21,11 +21,10 @@ download_royalties <- function(ano_inicial, ano_final){
 
   links <- as.list(links)
   dest <- as.character(ano_final:ano_inicial)
-  dest <- glue::glue("C:/Arthur/ANPr/municipios-{dest}.csv")
+  wd <- getwd()
+  dest <- glue::glue("{wd}/municipios-{dest}.csv")
 
   purrr::walk2(links, dest, utils::download.file, mode = "wb")
-
-
 
   #teste
 
