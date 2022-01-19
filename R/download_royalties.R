@@ -20,10 +20,12 @@ download_royalties <- function(ano_inicial, ano_final){
   ## baixando os .csv
 
   links <- as.list(links)
-  dest <- as.character(2019:2016)
-  dest <- glue::glue("data/municipios-{dest}.csv")
+  dest <- as.character(ano_final:ano_inicial)
+  dest <- glue::glue("C:/Arthur/ANPr/municipios-{dest}.csv")
 
   purrr::walk2(links, dest, utils::download.file, mode = "wb")
+
+
 
   #teste
 
